@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokeAPI.PokemonPage"
+             Title="PokemonPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+        BackgroundColor="#f0f0f1">
+            <Grid
+            RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.33*"/>
+                    <RowDefinition Height="0.67*"/>
+                </Grid.RowDefinitions>
+                <VerticalStackLayout
+                Margin="0,-30,0,0"
+                BackgroundColor="Transparent"
+                Grid.Row="0">
+
+                    <Frame
+                    
+                        BorderColor="{StaticResource PokedexColor}"
+                        BackgroundColor="{StaticResource PokedexColor}"
+                        x:Name="PokeImageFrame"
+                        Padding="0,10,0,-10"
+                        CornerRadius="25"
+                        Margin="0">
+                        <Image
+                            HeightRequest="200"
+                            Aspect="AspectFit"
+                            x:Name="PokeImage"/>
+    
+                    </Frame>
+
+                </VerticalStackLayout>
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Margin="15,0"
+                    Spacing="25">
+                    <Label 
+                        HorizontalOptions="Center"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        x:Name="PokeName"
+                        TextColor="#2b292c"
+                        Text="Pokemon"/>
+
+                    <HorizontalStackLayout
+                        Spacing="25"
+                        Margin="0,-10,0,0"
+                        Padding="0"
+                        HorizontalOptions="Center"
+                        x:Name="TypeLayout">
+
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout
+                        Spacing="10"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Peso: "
+                            TextColor="#2b292c"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"/>
+                        <Label
+                            x:Name="WeightLabel"
+                            TextColor="#2b292c"
+                            FontSize="18"
+                            VerticalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+
+
+                    <HorizontalStackLayout
+                        Spacing="15"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="Altura:"
+                            TextColor="#2b292c"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            VerticalTextAlignment="Center"/>
+                        <Label
+                            x:Name="HeightLabel"
+                            TextColor="#2b292c"
+                            FontSize="18"
+                            VerticalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Estadísticas base"
+                        TextColor="#2b292c"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        VerticalTextAlignment="Center"/>
+                    <VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="HP:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="HPLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="HpBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource HPColor}"/>
+                            </Frame>
+
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="Ataque:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="AttackLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="AttackBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource AttackColor}"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="Defensa:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="DefenseLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="DefenseBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource DeffenseColor}"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="Ataque especial:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="SpecialAttackLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="SpecialAttackBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource SpAttackColor}"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="Defensa especial:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="SpecialDefenseLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="SpecialDefenseBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource SpDefenseColor}"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout
+                                HorizontalOptions="Center"
+                                Spacing="15">
+                                <Label
+                                    Text="Velocidad:"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"/>
+                                <Label
+                                    x:Name="SpeedLabel"
+                                    TextColor="#2b292c"
+                                    FontSize="18"
+                                    VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                            <Frame
+                                Margin="50,0"
+                                BorderColor="Transparent"
+                                BackgroundColor="Transparent"
+                                Padding="0">
+                                <ProgressBar
+                                    BackgroundColor="Transparent"
+                                    InputTransparent="True"
+                                    Progress="0.5"
+                                    HeightRequest="25"
+                                    x:Name="SpeedBar"
+                                    IsVisible="True"
+                                    ProgressColor="{StaticResource SpeedColor}"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
